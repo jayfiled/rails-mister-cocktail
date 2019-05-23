@@ -1,0 +1,11 @@
+<div class="card my-3" style="width: 18rem;">
+  <img src="https://picsum.photos/200/300" class="card-img-top rounded" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= @cocktail.name %></h5>
+    <% @cocktail.ingredients.each do |ingredient| %>
+    <span class="card-text"> <%= ingredient.name %></span>
+    <% end %>
+    <%= link_to 'Add dosage', new_cocktail_dose_path(@cocktail)  %>
+  </div>
+</div>
+<%= link_to "Go back", root_path %>
