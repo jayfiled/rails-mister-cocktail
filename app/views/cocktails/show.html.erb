@@ -5,7 +5,8 @@
     <% @cocktail.ingredients.each do |ingredient| %>
     <span class="card-text"> <%= ingredient.name %></span>
     <% end %>
-    <%= link_to 'Add dosage', new_cocktail_dose_path(@cocktail)  %>
+    <%= link_to 'Add dosage', new_cocktail_dose_path(@cocktail), {class: "btn btn-primary"}  %>
+    <%= link_to "+", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
   </div>
 </div>
 <%= link_to "Go back", root_path %>

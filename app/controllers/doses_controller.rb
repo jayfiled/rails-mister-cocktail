@@ -6,11 +6,14 @@ class DosesController < ApplicationController
   end
 
   def create
+    # byebug
     @dose = Dose.new(dose_params)
     @dose.cocktail = @cocktail
-    @dose.save!
-
-    redirect_to cocktail_path(@cocktail)
+    if @dose.save
+      redirect_to cocktail_path(@cocktail)
+    else
+      redirect_to root_path
+    end
   end
 
   private
