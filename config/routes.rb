@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root to: 'cocktails#index'
 
+  delete 'doses/:id', to: 'doses#destroy', as: :doses
+
   resources :cocktails, only: %i[show new create destroy] do
     resources :doses, only: %i[new create]
   end

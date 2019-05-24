@@ -2,11 +2,17 @@
   <img src="https://picsum.photos/200/300" class="card-img-top rounded" alt="...">
   <div class="card-body">
     <h5 class="card-title"><%= @cocktail.name %></h5>
-    <% @cocktail.ingredients.each do |ingredient| %>
-    <span class="card-text"> <%= ingredient.name %></span>
+    <% @cocktail.doses.each do |dose| %>
+    <div class="d-flex justify-content-between">
+      <div class="card-text border rounded m-3 p-3"> <%= "#{dose.ingredient.name} #{dose.description}" %>
+      </div>
+      <%= link_to doses_path(dose), method: :delete, data: {confirm: "Are you sure?"}, class: "d-flex" do %>
+      <span class="align-self-center del">-</span>
+      <% end %>
+    </div>
     <% end %>
     <%= link_to 'Add dosage', new_cocktail_dose_path(@cocktail), {class: "btn btn-primary"}  %>
-    <%= link_to "+", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+    <%= link_to "Delete", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
   </div>
 </div>
 <%= link_to "Go back", root_path %>
