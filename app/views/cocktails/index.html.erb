@@ -6,7 +6,8 @@
   <% @cocktails.each do |cocktail| %>
     <%= link_to cocktail_path(cocktail[:id]) do %>
       <div class="card my-3" style="width: 18rem;">
-        <img src="https://picsum.photos/200/300" class="card-img-top rounded" alt="...">
+      <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fit %>
+
         <div class="card-body">
           <h5 class="card-title"><%= cocktail.name %></h5>
         </div>

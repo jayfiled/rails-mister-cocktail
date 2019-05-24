@@ -6,7 +6,6 @@ class DosesController < ApplicationController
   end
 
   def create
-    # byebug
     @dose = Dose.new(dose_params)
     @dose.cocktail = @cocktail
     if @dose.save

@@ -1,0 +1,7 @@
+
+<%= simple_form_for @cocktail do |t| %>
+  <%= t.input :name %>
+  <%= t.input :photo %>
+  <%= t.input :photo_cache, as: :hidden %>
+  <%= t.button :submit %>
+<% end %>

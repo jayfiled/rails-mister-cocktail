@@ -1,10 +1,12 @@
 <div class="card my-3" style="width: 18rem;">
-  <img src="https://picsum.photos/200/300" class="card-img-top rounded" alt="...">
+<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fit %>
+
   <div class="card-body">
     <h5 class="card-title"><%= @cocktail.name %></h5>
     <% @cocktail.doses.each do |dose| %>
     <div class="d-flex justify-content-between">
-      <div class="card-text border rounded m-3 p-3"> <%= "#{dose.ingredient.name} #{dose.description}" %>
+      <div class="card-text border rounded m-3 p-3">
+        <%= "#{dose.ingredient.name} #{dose.description}" %>
       </div>
       <%= link_to doses_path(dose), method: :delete, data: {confirm: "Are you sure?"}, class: "d-flex" do %>
       <span class="align-self-center del">-</span>
