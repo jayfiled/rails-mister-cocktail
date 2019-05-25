@@ -1,7 +1,4 @@
 
-body {
-  font: 13px/22px Helvetica;
-}
 .buttons {
   overflow: hidden;
 }
@@ -19,7 +16,14 @@ body {
   margin-right: 20px;
   margin-bottom: 20px;
 }
-a#link {position: absolute; left: 20px; bottom: 10px; text-decoration: none; color: #555; font-weight: bold;}
+a#link {
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  text-decoration: none;
+  color: #555;
+  font-weight: bold;
+}
 /*------------------------------------------------------*/
 /* BUTTONS */
 /*------------------------------------------------------*/

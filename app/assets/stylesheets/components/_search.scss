@@ -1,0 +1,20 @@
+input[type=text] {
+    width: 80px;
+    transition: width 0.4s ease-in-out;
+    border-radius: 126px;
+    border: 1px solid rgba(70, 70, 70, 0.3);
+    padding: 14px;
+    height: 60px;
+    margin: 16px;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+  width: 25%;
+  outline: none;
+}
+
+input[type=text]:hover {
+  width: 25%;
+  outline: none;
+}

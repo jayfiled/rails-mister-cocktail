@@ -1,6 +1,8 @@
 
 <%= simple_form_for ([@cocktail, @dose]) do |t| %>
-<%= t.input :description %>
+<%= t.input :description,  error: "You've already got this dosage" %>
+<%= t.error_notification %>
 <%= t.association :ingredient, collection: Ingredient.all %>
 <%= t.button :submit %>
+  <%= link_to 'Back', cocktail_path(@cocktail), {class: 'btnz'} %>
 <% end %>

@@ -7,11 +7,11 @@ class DosesController < ApplicationController
 
   def create
     @dose = Dose.new(dose_params)
-    @dose.cocktail = @cocktail
+    @dose.cocktail = @cocktail # Same as saying @cocktail[:id]
     if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
-      redirect_to root_path
+      render 'new'
     end
   end
 

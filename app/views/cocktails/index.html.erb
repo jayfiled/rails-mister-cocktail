@@ -1,15 +1,18 @@
-<h1 class="display-1">Cocka-taildy-doo!</h1>
-<a href="/cocktails/new" class="btn btn-primary my-3">New Cocktail</a>
-
+<h1 class="display-1 my-3">Cocka-taildy-doo!</h1>
+<div class="d-flex">
+  <a href="/cocktails/new" class="btn btnz btnz-dark my-3">New Cocktail</a>
+  <input class="mx-3" type="text" name="search" placeholder="Search..">
+</div>
+<hr>
 
 <div class="d-flex flex-wrap justify-content-between">
   <% @cocktails.each do |cocktail| %>
     <%= link_to cocktail_path(cocktail[:id]) do %>
-      <div class="card my-3" style="width: 18rem;">
+      <div class="card shadow my-3" style="width: 18rem;">
       <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fit %>
 
         <div class="card-body">
-          <h5 class="card-title"><%= cocktail.name %></h5>
+          <h5 class="card-title title"><%= cocktail.name %></h5>
         </div>
       </div>
     <% end %>
