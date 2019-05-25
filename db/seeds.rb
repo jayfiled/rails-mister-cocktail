@@ -13,7 +13,6 @@ puts 'cleaning databse..'
 Cocktail.destroy_all
 Ingredient.destroy_all
 
-
 puts 'Adding seeds'
 
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
